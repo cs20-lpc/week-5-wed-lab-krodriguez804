@@ -4,6 +4,19 @@ using namespace std;
 // Ackermann function definition
 unsigned long long ackermann(unsigned int m, unsigned int n) {
  // TODO: Complete the code.
+    if (m == 0) {
+        n += 1;
+        return n;
+    }
+
+    else if (n == 0) {
+        return ackermann(m - 1, 1);
+    }
+
+    else {
+        return ackermann(m - 1, ackermann(m, n-1));
+    }
+ 
 }
 
 int main() {
